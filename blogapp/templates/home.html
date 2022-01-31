@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Blogs | home page</h1>
+    <div>
+        <a href="{% url 'create-post' %}">CREATE POST</a>
+    </div>
+    <hr STYLE="background-color:#000000; height:10px; width:100%;">
+
+    <div>
+        <div>
+            {% for post in blog %}
+            <div>
+                <h2>{{post.id}}| <a href='/post/{{ post.id }}' >{{ post.title }},</a></h2>
+                <h3>Author - {{post.name}}</h3>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
